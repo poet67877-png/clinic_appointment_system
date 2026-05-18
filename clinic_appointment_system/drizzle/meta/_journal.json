@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1778840187393,
+      "tag": "0000_pale_nocturne",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1778841838248,
+      "tag": "0001_modern_whistler",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1778842078016,
+      "tag": "0002_blushing_warstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1778848232434,
+      "tag": "0003_steady_secret_warriors",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1778848436710,
+      "tag": "0004_cultured_cobalt_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1778866106535,
+      "tag": "0005_bright_mikhail_rasputin",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1778866453972,
+      "tag": "0006_curvy_mimic",
+      "breakpoints": true
+    }
+  ]
+}

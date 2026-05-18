@@ -1,0 +1,43 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "server",
+    "db",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://35561dkLBFT3iD8.root:uYVqdiORUI8ir78Yn829@gateway06.us-east-1.prod.aws.tidbcloud.com:4000/RCzFuXqApa5FpYCp6QEcbj?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310419663032017507/RCzFuXqApa5FpYCp6QEcbj",
+    "access_key_id": "ASIAZV3A2ECZJK5O7LW5",
+    "secret_access_key": "n2msg3VFT8qek2J4TMfjZp0x4vtZHhhKCRa8lp2k",
+    "session_token": "IQoJb3JpZ2luX2VjEKv//////////wEaCXVzLWVhc3QtMSJGMEQCIAO44afUe6b1OShiY5bJ1vXJ+sEUuLHVIUgIF8UNxr+VAiB9GYkeSY/CJSG9Ss6Zf986KZ3QbEUqRgm5cFtGeG1wvCr2AwhzEAQaDDY2NTM4NjA5ODg2NiIMq0+2UqtYCquC+A1xKtMD9tcPyVErcKetnsmLcjGEkVSYR1xMAcTCKBLOvr6pli9aA9x2qNckypR9KuG+J3+NNVl+N4nS4kr29BpYWT9auTnQHmXu0Wt0LB3drER5sL9/9IE702Ux3SWXjd3FeFfxYuKQxNKA6Ms7Oo4PAikzIOy8xRvK1iaNoaCCvBTiDQ+BGpz775R08MbjAy8t1Pfs9/FEImunB/bGcnrw0qcj6Kc8NEe+OtNiEXqrFHAGZ1bpoR9fkwzq22sj3Oh7z9ZyWSddskxfczz3jMUUqnv9BvO/yo228MPCegiL28ygqmrDYaE10EAbgMoeVVhIbL9VpeIfwVc6iC1TUXYf/rA+qSQ3iggFDGCH8uxIdQ6jLoDqR8Js7Nij3Gvqz1JIaJh39VVFBlZU1gMCMWCZf6HpUodEiR9ncR+r2bQtmQxCmPKMeMixnesZ1r/SeslWukxwpQmhAq4LNthZ+0l+T0s0XjrTL0VKAFA2xNJ3Jr2HH6PUkBJoMmbpk13jG7lyU+8AjtdI5Zw8lWeHT8vkVu0wGm8L3o0TBCT4b164wColajPTXgVqw4R8tKHBO03xv3IphQnyDtMaLRgkv9Ewr99QfsN1ZZkScUINpNkfMQYVCGBspUUw6uSb0AY6ngETdknkUeJKgmtEG8VbJ711RxKEmdLDdLzKbP+JUJR8ApoqAnMowJt7rWqPyJchFBd8mFyBB0FMDohH4sdLq0uc1tFKDK22AgMPefCnEG1h6c867Mscsx4n0BfE+/6Vgwfi32m0VerjGS3UBxbbXuvYc2EztYdSXmvPN3Nj8tipuDxHEWY/FXIRUCmbqwUMzbWW/iw1YoV00TYRh9PBvA==",
+    "expiration": "2026-05-15T22:16:10.000Z"
+  },
+  "name": "clinic_appointment_system",
+  "path": "/home/ubuntu/clinic_appointment_system",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "8JwJfA6MtxvRUoCBNYvU7b",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "92Z9Kt5bJ6acCvgzzM9EdR",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "الشاعر ماجد الحوفي",
+    "OWNER_OPEN_ID": "aHuKoGqHmJn85ma3uF6VaE",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "54e6f4c5-bb8d-46b8-b284-6c488f0ebbc9",
+    "VITE_APP_ID": "RCzFuXqApa5FpYCp6QEcbj",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "عيادة النور - نظام حجز المواعيد",
+    "VITE_FRONTEND_FORGE_API_KEY": "6z4zTg433Ds5EdkGqGSYCt",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
