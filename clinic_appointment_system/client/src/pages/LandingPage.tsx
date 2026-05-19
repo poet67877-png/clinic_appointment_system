@@ -137,7 +137,7 @@ export default function LandingPage() {
               <>
                 <Button
                   variant="outline"
-                  onClick={() => (window.location.href = getLoginUrl())}
+                  onClick={() => navigate("/login")}
                   className="clinic-button-secondary"
                 >
                   دخول
