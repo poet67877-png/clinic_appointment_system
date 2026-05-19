@@ -6,7 +6,7 @@ import {
   ArrowRight, Check, Star 
 } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { getLoginUrl } from "@/const";
+     import { useLocation } from "wouter";
 
 export default function LandingPage() {
   const [, navigate] = useLocation();
