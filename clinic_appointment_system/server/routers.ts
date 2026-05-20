@@ -10,10 +10,10 @@ import { subscriptionsRouter } from "./subscriptions.router";
 import { adminRouter } from "./admin.router";
 import { superadminRouter } from "./superadmin.router";
 import { clinicCustomizationRouter } from "./clinic-customization.router";
+import { emailAuthRouter } from "./email-auth.router";
 import { publicProcedure, router } from "./_core/trpc";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   clinic: clinicRouter,
   multitenantClinic: multitenantClinicRouter,
@@ -24,23 +24,17 @@ export const appRouter = router({
   admin: adminRouter,
   superadmin: superadminRouter,
   clinicCustomization: clinicCustomizationRouter,
+  emailAuth: emailAuthRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
+    login: emailAuthRouter.login,
+    register: emailAuthRouter.register,
     logout: publicProcedure.mutation(({ ctx }) => {
       const cookieOptions = getSessionCookieOptions(ctx.req);
       ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
-      return {
-        success: true,
-      } as const;
+      return { success: true } as const;
     }),
   }),
-
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
 });
 
 export type AppRouter = typeof appRouter;
