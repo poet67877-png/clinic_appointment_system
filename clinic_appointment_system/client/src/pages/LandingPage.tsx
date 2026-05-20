@@ -6,7 +6,7 @@ import {
   ArrowRight, Check, Star 
 } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { getLoginUrl } from "@/const";
+    
 
 export default function LandingPage() {
   const [, navigate] = useLocation();
@@ -137,7 +137,7 @@ export default function LandingPage() {
               <>
                 <Button
                   variant="outline"
-                  onClick={() => (window.location.href = getLoginUrl())}
+                  onClick={() => navigate("/login")}
                   className="clinic-button-secondary"
                 >
                   دخول
