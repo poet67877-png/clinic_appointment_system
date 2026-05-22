@@ -176,8 +176,19 @@ export async function runMigrations() {
   const db = await getDb();
   if (!db) return;
   try {
-    // Add passwordHash column if it doesn't exist
-    await db.execute(`ALTER TABLE users ADD COLUMN IF NOT EXISTS passwordHash varchar(255)`);
+    // Check if passwordHash column exists
+    const result = await db.execute(`
+      SELECT COUNT(*) as count FROM information_schema.COLUMNS 
+      WHERE TABLE_SCHEMA = DATABASE() 
+      AND TABLE_NAME = 'users' 
+      AND COLUMN_NAME = 'passwordHash'
+    `);
+    const rows = result[0] as any[];
+    const count = rows[0]?.count ?? 0;
+    if (Number(count) === 0) {
+      await db.execute(`ALTER TABLE users ADD COLUMN passwordHash varchar(255)`);
+      console.log("[DB] Added passwordHash column ✅");
+    }
     console.log("[DB] Migrations completed ✅");
   } catch (error) {
     console.warn("[DB] Migration warning:", error);
