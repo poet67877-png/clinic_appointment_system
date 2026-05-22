@@ -171,3 +171,15 @@ export async function setUserPassword(userId: number, passwordHash: string) {
   if (!db) return;
   await db.update(schema.users).set({ passwordHash }).where(eq(users.id, userId));
 }
+
+export async function runMigrations() {
+  const db = await getDb();
+  if (!db) return;
+  try {
+    // Add passwordHash column if it doesn't exist
+    await db.execute(`ALTER TABLE users ADD COLUMN IF NOT EXISTS passwordHash varchar(255)`);
+    console.log("[DB] Migrations completed ✅");
+  } catch (error) {
+    console.warn("[DB] Migration warning:", error);
+  }
+}
