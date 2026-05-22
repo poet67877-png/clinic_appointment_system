@@ -160,10 +160,14 @@ export async function getAppointmentStats() {
 // TODO: add feature queries here as your schema grows.
 
 export async function getUserByEmail(email: string) {
-  const rows = await db.select().from(schema.users).where(eq(schema.users.email, email)).limit(1);
+  const db = await getDb();
+  if (!db) return null;
+  const rows = await db.select().from(users).where(eq(users.email, email)).limit(1);
   return rows[0] ?? null;
 }
 
 export async function setUserPassword(userId: number, passwordHash: string) {
-  await db.update(schema.users).set({ passwordHash }).where(eq(schema.users.id, userId));
+  const db = await getDb();
+  if (!db) return;
+  await db.update(schema.users).set({ passwordHash }).where(eq(users.id, userId));
 }
