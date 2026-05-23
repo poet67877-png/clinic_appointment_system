@@ -1,5 +1,5 @@
 [phases.build]
-cmds = ["npm install", "npm run build"]
+cmds = ["npm install --prefix server", "npm run build --prefix server"]
 
 [start]
-cmd = "node dist/index.js"
+cmd = "node server/dist/index.js"
