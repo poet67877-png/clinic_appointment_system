@@ -183,17 +183,16 @@ html, body {
   .clinic-tabs {
     @apply grid grid-cols-4 gap-2;
   }
-}
 
-/* Clinic button styles */
-.clinic-button {
-  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
-}
+  .clinic-button {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
 
-.clinic-button-primary {
-  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-accent text-accent-foreground hover:bg-blue-600 active:scale-95;
-}
+  .clinic-button-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-accent text-accent-foreground hover:bg-blue-600 active:scale-95;
+  }
 
-.clinic-button-secondary {
-  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-card text-foreground border border-border hover:bg-popover;
+  .clinic-button-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-card text-foreground border border-border hover:bg-popover;
+  }
 }

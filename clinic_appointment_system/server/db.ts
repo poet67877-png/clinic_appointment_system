@@ -158,27 +158,3 @@ export async function getAppointmentStats() {
 }
 
 // TODO: add feature queries here as your schema grows.
-
-export async function getUserByEmail(email: string) {
-  const db = await getDb();
-  if (!db) return null;
-  const rows = await db.select().from(users).where(eq(users.email, email)).limit(1);
-  return rows[0] ?? null;
-}
-
-export async function setUserPassword(userId: number, passwordHash: string) {
-  const db = await getDb();
-  if (!db) return;
-  await db.update(schema.users).set({ passwordHash }).where(eq(users.id, userId));
-}
-
-export async function runMigrations() {
-  const db = await getDb();
-  if (!db) return;
-  try {
-    await db.execute(`ALTER TABLE users ADD COLUMN IF NOT EXISTS "passwordHash" varchar(255)`);
-    console.log("[DB] Migrations completed ✅");
-  } catch (error) {
-    console.warn("[DB] Migration warning:", error);
-  }
-}

@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: clinicplus_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_change_me
+      MYSQL_DATABASE: clinicplus
+      MYSQL_USER: clinicplus_user
+      MYSQL_PASSWORD: clinicplus_password_change_me
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - clinicplus_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clinicplus_app
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: "mysql://clinicplus_user:clinicplus_password_change_me@mysql:3306/clinicplus"
+      PORT: 3000
+      JWT_SECRET: your-secret-key-change-this-in-production
+      SUPER_ADMIN_EMAIL: majid@clinicplus.iq
+      SUPER_ADMIN_PASSWORD: MajidAdmin2024
+      WHATSAPP_NUMBER: "07707901154"
+      VITE_APP_TITLE: "ClinicPlus"
+    ports:
+      - "3000:3000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - clinicplus_network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  clinicplus_network:
+    driver: bridge
