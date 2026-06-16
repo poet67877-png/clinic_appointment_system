@@ -1,4 +1,8 @@
 {
+"engines": {
+  "node": "22.x"
+},
+
   "name": "clinic_appointment_system",
   "version": "1.0.0",
   "type": "module",
